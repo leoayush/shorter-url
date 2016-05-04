@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  div(class="container-fluid")
+  
+    if (err)
+        div
+            h2(style = "color: red;")= err
+ 
+    p
+      a(href="mailto:ayush.studious@gmail.com") 
+        i(class="fa fa-envelope fa-fw")
+      a(href="https://github.com/leoayush" target="_blank") 
+        i(class="fa fa-github fa-fw")
+      a(href="http://codepen.io/leoayush" target="_blank") 
+        i(class="fa fa-codepen")
+      a(href="http://www.freecodecamp.com/leoayush" target="_blank")
+        i(class="fa fa-fire fa-fw")
+    p Created by Ayush Jha.
+    h1(class="header")
+      | FreeCodeCamp API Basejump: URL Shortener Microservice
+    blockquote
+      p User stories:
+      ul
+        li I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</ul>
+        li When I visit that shortened URL, it will redirect me to my original link.</ul>
+    h3 Example creation usage:
+    code.
+        https://ayush-little-url.herokuapp.com/new/https://www.google.com
+    br
+    code.
+        https://ayush-little-url.herokuapp.com/new/http://freecodecamp.com/news
+    h3 Example creation output
+    code.
+      {
+        "original_url":"https://www.google.com/",
+        "short_url":"https://ayush-little-url.herokuapp.com/2871"
+      }
+    h3 Usage:
+    code https://ayush-little-url.herokuapp.com/2871
+    h3 Will redirect to:
+    code.
+        https://www.google.com/
